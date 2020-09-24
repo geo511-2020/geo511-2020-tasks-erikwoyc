@@ -29,4 +29,5 @@ Plot2 <- ggplot(gapminder1, aes(x = year, y = gdpPercap, color = continent,
   facet_wrap(~continent,nrow=1) + theme_bw() +
   labs(x="Year", y = "GDP per Capita", size = "Population (100k)", color = "Continent")
 Plot2
+##Collin & Kyle helped with idea for placement of inherit.aes = FALSE 
 ##ggsave("Plot2.png", width = 15, units = "in")
