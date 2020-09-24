@@ -3,7 +3,7 @@
  these functions help to fix issues such as a variable being spread across 
  multiple columns or rows. This is shown very clearly in the figures such as
  table2 with the pivot_wider() function.
- ------
+ 
  I also thought the filter joins were pretty cool functions. The semi_join(x,y)
  and anti_join(x,y) seem to be really helpful when you are working with data from
  filtered summary tables and you want to match it back to an original set of data.
