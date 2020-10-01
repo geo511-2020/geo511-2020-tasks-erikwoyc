@@ -12,6 +12,6 @@ Airport_join <- left_join(flights, airports, by = c("dest" = "faa"))
 Farthest_Airport <- Airport_join %>%
   arrange(desc(distance)) %>%
   slice(1)
-view(Farthest_Airport)
+view(Farthest_Airport$name)
 ## Answer
 ## Honolulu Intl
