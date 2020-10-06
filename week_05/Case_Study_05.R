@@ -26,5 +26,9 @@ NY <- us_states_albers %>%
 # Create Border Object
 Border <- st_intersection(Canada_Buffer, NY)
 # Plot
-ggplot() + geom_sf(data = NY) + geom_sf(data = Border, aes(fill = 'red'))
-
+Final_Plot <- ggplot() + geom_sf(data = NY) + 
+  geom_sf(data = Border, aes(fill = 'red')) +
+  labs(title = "New York Land within 10km")
+Final_Plot
+# Save Plot
+ggsave(filename = "Final_Plot.png")
