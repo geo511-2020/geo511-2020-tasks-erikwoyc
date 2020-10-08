@@ -30,5 +30,8 @@ Final_Plot <- ggplot() + geom_sf(data = NY) +
   geom_sf(data = Border, aes(fill = 'red')) +
   labs(title = "New York Land within 10km")
 Final_Plot
+#Area Calculation
+Border_area <- st_area(Border)
+set_units(Border_area, km^2)
 # Save Plot
 ggsave(filename = "Final_Plot.png")
