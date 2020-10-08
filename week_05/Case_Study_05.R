@@ -33,5 +33,6 @@ Final_Plot
 #Area Calculation
 Border_area <- st_area(Border)
 set_units(Border_area, km^2)
+#Area = 3495.19 [km^2]
 # Save Plot
 ggsave(filename = "Final_Plot.png")
