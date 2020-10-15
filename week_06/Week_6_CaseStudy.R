@@ -28,10 +28,18 @@ ggplot() + geom_sf(data = TempC_sf,
 # Communicate the Results
 library(dplyr)
 #view(TempC_sf)
-Results <- TempC_sf %>% group_by(continent) 
+Results <- TempC_sf %>% group_by(continent) %>%
+  arrange(desc(CRU_Global_1961.1990_Mean_Monthly_Surface_Temperature_Climatology))
+
+#Worked with group to figure the final results table out
+
 Results_table <- Results %>% 
   top_n(1, CRU_Global_1961.1990_Mean_Monthly_Surface_Temperature_Climatology)
-view(Results_table)
+
+Final_Results_Table <- Results_table %>%
+  st_set_geometry(NULL) %>%
+  select('name_long', 'continent', 'CRU_Global_1961.1990_Mean_Monthly_Surface_Temperature_Climatology')
+view(Final_Results_Table)
 
   
   
