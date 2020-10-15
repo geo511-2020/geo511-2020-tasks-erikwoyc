@@ -38,7 +38,8 @@ felt that this was an interesting example to explore the possibilities
 within a housing price analysis. Examples of some graphics produced from
 this project include Predicted Price Over/Under Actual Price.
 ![](/Users/erik/Desktop/Geo511%20Spatial%20Data%20Science/geo511-2020-tasks-erikwoyc/predictive%20model.png)
-\#\# Example 3
+
+## Example 3
 
 <https://github.com/vincnardelli/bayes-house-price> Like Example 2, this
 project is a little more complicated than what I intend to do but a
