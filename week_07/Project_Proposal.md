@@ -37,7 +37,7 @@ project is a higher level than what I intend to do for my project, I
 felt that this was an interesting example to explore the possibilities
 within a housing price analysis. Examples of some graphics produced from
 this project include Predicted Price Over/Under Actual Price.
-![](/Users/erik/Desktop/Geo511%20Spatial%20Data%20Science/geo511-2020-tasks-erikwoyc/predictive%20model.png)
+![](https://github.com/geo511-2020/geo511-2020-tasks-erikwoyc/blob/master/predictive%20model.png?raw=true)
 
 ## Example 3
 
