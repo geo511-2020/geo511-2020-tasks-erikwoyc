@@ -1,3 +1,9 @@
+---
+title: "Buffalo House Price Analysis"
+author: Erik Woyciesjes
+date: October 15, 2020
+output: github_document
+---
 
 # Introduction to problem/question
   
