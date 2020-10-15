@@ -28,7 +28,11 @@ ggplot() + geom_sf(data = TempC_sf,
 # Communicate the Results
 library(dplyr)
 #view(TempC_sf)
-#Results <- TempC_sf %>% group_by(continent) %>%......(still working this part out)
+Results <- TempC_sf %>% group_by(continent) 
+Results_table <- Results %>% 
+  top_n(1, CRU_Global_1961.1990_Mean_Monthly_Surface_Temperature_Climatology)
+view(Results_table)
+
   
   
 
