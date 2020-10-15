@@ -21,7 +21,7 @@ TempC <- raster::extract(tmean, sp_world, fun = max, na.rm = 1,
 TempC_sf <- st_as_sf(TempC)
 TempC_sf
 # Plot
-ggplot() + geom_sf(data = TempC_sf, 
+Final_plot <- ggplot() + geom_sf(data = TempC_sf, 
                    aes(fill = TempC_sf$CRU_Global_1961.1990_Mean_Monthly_Surface_Temperature_Climatology)) +
   scale_fill_viridis_c(name="Annual\nMaximum\nTemperature (C)") + 
   theme(legend.position = 'bottom')
@@ -41,6 +41,7 @@ Final_Results_Table <- Results_table %>%
   select('name_long', 'continent', 'CRU_Global_1961.1990_Mean_Monthly_Surface_Temperature_Climatology')
 view(Final_Results_Table)
 
+##ggsave('Final_plot.png')
   
   
 
