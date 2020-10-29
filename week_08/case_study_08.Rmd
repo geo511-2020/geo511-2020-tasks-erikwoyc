@@ -13,31 +13,46 @@ output:
 ```{r echo = FALSE, eval = TRUE}
  library(tidyverse)
  annual_mean <- read_table("ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_annmean_mlo.txt", skip = 56)
- ```
+```
  
  # Data Plotted
- ```{r echo = FALSE, eval = TRUE}
+ 
+```{r echo = FALSE, eval = TRUE}
  library(ggplot2)
  library(ggthemes)
  figure <- ggplot(annual_mean, aes(year, mean)) + geom_line() +
   labs(x = "Year", y = "Annual Mean", title = "Annual Mean CO2 1958 - 2019") +
   theme_bw()
 print(figure)
- ```
+```
  
  # Arrage Data for Table 
- ```{r echo = FALSE, eval = TRUE}
+```{r echo = FALSE, eval = TRUE}
  library(knitr)
  library(dplyr)
  recent_decade <- annual_mean %>%
-   arrange(desc(year))
- ```
+   arrange(desc(year)) %>% 
+   top_n(n = 10)
+```
+ 
  # Data Table
- ```{r table, echo = FALSE, eval = TRUE}
+```{r table, echo = FALSE, eval = TRUE}
 library(kableExtra)
-kable(recent_decade[1:10, 2:3], caption = 'Annual Means for the Last Decade', "html") %>%
- kable_styling("striped") %>%
-   save_kable(width = 10,file = "table.pdf")
- ```
+knitr::kable(head(slice(recent_decade, desc(year))), format = "simple",
+             align = "c", caption = 'Annual Means for the Last Decade')
+ 
+```
+
+```{r, echo=FALSE}
+#rmarkdown::render('~/Desktop/Geo511 Spatial Data Science/geo511-2020-tasks-erikwoyc/week_08/case_study_08.Rmd', output_format="all")
+```
+
+
+
+
+
+
+
+
 
  
