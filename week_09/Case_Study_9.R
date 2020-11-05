@@ -43,7 +43,7 @@ Top_5 <- storm_states %>%
   group_by(state) %>%
   summarize(storms=length(unique(NAME))) %>%
   arrange(desc(storms)) %>%
-  slice(1:5)
+  slice(1:5) %>% st_set_geometry(NULL)
 
 knitr::kable(Top_5, "pipe")
 
