@@ -1,7 +1,58 @@
 ---
-title: "Case Study 08"
-author: Your Name
-date: August 1, 2020
-output: github_document
+title: One Script, Many Products
+author: Erik Woyciesjes
+date: 10/29/2020
+output:
+  html_document: default
+  github_document: default
+  powerpoint_presentation: default
+  word_document: default
 ---
+
+# Mauna Loa CO2 Annual Mean Data
+```{r echo = FALSE, eval = TRUE}
+ library(tidyverse)
+ annual_mean <- read_table("ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_annmean_mlo.txt", skip = 56)
+```
+ 
+ # Data Plotted
+ 
+```{r echo = FALSE, eval = TRUE}
+ library(ggplot2)
+ library(ggthemes)
+ figure <- ggplot(annual_mean, aes(year, mean)) + geom_line() +
+  labs(x = "Year", y = "Annual Mean", title = "Annual Mean CO2 1958 - 2019") +
+  theme_bw()
+print(figure)
+```
+ 
+ # Arrage Data for Table 
+```{r echo = FALSE, eval = TRUE}
+ library(knitr)
+ library(dplyr)
+ recent_decade <- annual_mean %>%
+   arrange(desc(year)) %>% 
+   top_n(n = 10)
+```
+ 
+ # Data Table
+```{r table, echo = FALSE, eval = TRUE}
+library(kableExtra)
+knitr::kable(head(slice(recent_decade, desc(year))), format = "simple",
+             align = "c", caption = 'Annual Means for the Last Decade')
+ 
+```
+
+```{r, echo=FALSE}
+#rmarkdown::render('~/Desktop/Geo511 Spatial Data Science/geo511-2020-tasks-erikwoyc/week_08/case_study_08.Rmd', output_format="all")
+```
+
+
+
+
+
+
+
+
+
  

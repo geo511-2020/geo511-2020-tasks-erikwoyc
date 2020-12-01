@@ -1,0 +1,53 @@
+[<i class="fa fa-file-code-o fa-1x" aria-hidden="true"></i> Download this file as a template ](`r knitr::current_input()`).
+
+# Introduction to problem/question
+  
+# Problem / Question
+I would like to run an analysis on the house prices in the City of buffalo. I want to display my results with map visuals and provide a multiple linear regression to illustrate what variables had the greatest effect on housing prices. 
+
+# Inspiring Examples
+
+Include links and screenshots (or embedded images) of a few (~3-5) example graphics found on the internet that convey what you want to do.  Include a few sentences about why you selected each link.
+
+## Example 1
+![](http://urbanspatialanalysis.com/wp-content/uploads/2017/02/plot4_point-map-e1487598425346-792x508.png)
+
+I really like this graphic, and it is one of the types of graphics I hope to produce using a Buffalo basemap and the Tax Assessor's location data. The facet function was used to visualize the change in prices
+overtime which is one of the may goals of my project.For more information on this project see link.
+http://urbanspatialanalysis.com/dataviz-tutorial-mapping-san-francisco-home-prices-using-r/
+
+## Example 2
+
+https://rpubs.com/ablythe/520912
+
+This project looks to predict the price of houses in California in 1990 based on a number of 
+possible location-based predictors. Although this project is a higher level than what I intend to 
+do for my project, I felt that this was an interesting example to explore the possibilities within
+a housing price analysis. Examples of some graphics produced from this project include longitude vs latitude and associated variables (population and Median Household Income).
+![](/Users/erik/Desktop/Geo511 Spatial Data Science/geo511-2020-tasks-erikwoyc/predictive model.png)
+## Example 3
+
+https://github.com/vincnardelli/bayes-house-price
+Like Example 2, this project is a little more complicated than what I intend to do but a similar
+data set (City Assessor's data) was used to build this model. 
+# Proposed data sources
+
+2017 – 2018
+https://data.buffalony.gov/Government/2017-2018-Assessment-Roll/bxmp-ux8w
+
+2019 – 2020
+https://data.buffalony.gov/Government/2019-2020-Assessment-Roll/kckn-jafw
+
+2020 – 2021 (Current)
+https://data.buffalony.gov/Government/Current-2020-2021-Assessment-Roll/4t8s-9yih
+
+Erie County Parcel Shapefiles (From Erie County GIS Services) 
+
+# Proposed methods
+
+Proposed Packages: Ggplot2, ggmap, dplyr
+I intend to clean my data and view a few variables using ggplot. I then intend to run a linear regression (http://r-statistics.co/Linear-Regression.html), create a summary table of results and some associated scatter plots to investigate and visual possible indicators of price. Using ggmap, buffalo housing will be mapped based on price or potentially change in price over the course of 2017 – 2020. Another possible avenue of investigation could be looking at prices by year built and mapping changes in price based on the decade a house was built. One possible way of doing this could be to group houses (year built) in decades and run an ANOVA to examine variance in housing prices by decade. 
+
+
+# Expected results
+I hope to successfully run some statistical analysis as outlined in methods and produce some plots to visualize the data from that analysis. In addition, a map or two of the city of Buffalo will be created showing either housing prices across the city and/or change in housing price over a specific period of time. 
