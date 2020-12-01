@@ -31,6 +31,7 @@ a=meteo_tidy_ghcnd("USW00014733",
 
 precip <- xts(a$prcp, order.by=a$date)
 
+# Creating Two Dygraphs was aided by https://stackoverflow.com/questions/32502506/dygraph-in-r-multiple-plots-at-once
 # create a list of dygraphs objects
 library(htmltools)
 dy_graph <- list(
@@ -38,7 +39,7 @@ dy_graph <- list(
     dyRangeSelector(dateWindow = c("2020-01-01", "2020-10-31")),
   dygraphs::dygraph(precip, group="temp_rain", main="Daily Precipitation in Buffalo, NY")%>%
     dyRangeSelector(dateWindow = c("2020-01-01", "2020-10-31"))
-)  # end list
+)  
 
 # render the dygraphs objects using htmltools
 htmltools::browsable(htmltools::tagList(dy_graph))
